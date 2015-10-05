@@ -7,10 +7,16 @@
   }
 
   function getUserBet(min, max) {
-    do {
-      var userBet = prompt('Place a bet ($' + min + '-$' + max + '):');
-    } while (userBet < min || userBet > max);
-    return userBet;
+    if (min == max) {
+      var userBet = min;
+      alert('Placed a bet for ' + userBet + ' $!');
+      return userBet;
+    } else {
+      do {
+        var userBet = prompt('Place a bet ($' + min + '-$' + max + '):');
+      } while (userBet < min || userBet > max);
+      return userBet;
+    }
   }
 
   function getUserGuess() {
@@ -22,7 +28,7 @@
 
   function gameRound() {
 
-    userBet = getUserBet(5,10);
+    userBet = getUserBet(5, Math.min(playerMoney, 10));
     randomNo = generateRandomNo();
     userGuess = getUserGuess();
 
