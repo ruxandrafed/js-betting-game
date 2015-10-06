@@ -40,8 +40,7 @@ $(function() {
 
     if (rand === guess) {
       playerMoney *= 2;
-      $('#won').text('+' + playerMoney/2 + '$');
-      $('#won').fadeOut(3000);
+      $('#moneyLeft').append('<p style="color: green" >+' + playerMoney/2 + '$</p>');
       $('#money').text(playerMoney);
       $('#roundResult').text('Awesome, you guessed it! You now have ' + playerMoney + '$');
       $('#showRoundResult').show();
@@ -50,8 +49,7 @@ $(function() {
     } else if (Math.abs(guess - rand) > 1) {
 
       playerMoney -= userBet;
-      $('#loss').text('-' + userBet + '$');
-      $('#loss').fadeOut(3000);
+      $('#moneyLeft').append('<p style="color: red" >-' + userBet + '$</p>');
       $('#money').text(playerMoney);
 
         if (playerMoney >= 5) {
@@ -66,6 +64,7 @@ $(function() {
         }
 
       } else {
+        $('#moneyLeft').append('<p style="color: gray" >0$</p>');
         $('#roundResult').text('You were close! No loss, no gain; you stil have ' + playerMoney + '$');
         $('#money').text(playerMoney);
         $('#showRoundResult').show();
