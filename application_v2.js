@@ -7,7 +7,7 @@ $(function() {
   $('#playAgain').hide();
   $('#bye').hide();
 
-  var playerMoney = 20;
+  var playerMoney = 100;
   var userBet;
 
     $('#getBetForm').on('submit', function(e) {
@@ -37,10 +37,10 @@ $(function() {
   }
 
   function checkGuess(rand, guess) {
-    if (rand === guess) {
 
+    if (rand === guess) {
       playerMoney *= 2;
-      $('#won').text('+' + playerMoney + '$');
+      $('#won').text('+' + playerMoney/2 + '$');
       $('#won').fadeOut(3000);
       $('#money').text(playerMoney);
       $('#roundResult').text('Awesome, you guessed it! You now have ' + playerMoney + '$');
