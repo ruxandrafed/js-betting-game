@@ -1,6 +1,6 @@
-(function runGame() {
+(function() {
 
-  var playerMoney = 20;
+  var playerMoney = 100;
 
   function generateRandomNo() {
     return Math.floor((Math.random() * 10) + 1);

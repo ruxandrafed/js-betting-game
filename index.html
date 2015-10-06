@@ -1,4 +1,37 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-  <script src="application.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="application_v2.js"></script>
 </head>
+
+<body>
+  <div style="float: right">
+    You have: <span id="money">20</span>$.
+    <p id="loss" style="color: red"></p><p id="won" style="color: green"></p>
+  </div>
+  <div style="margin: 20px 0px 0px 20px; display: block">
+    <form id="getBetForm">
+      <label for="userBet">Place a bet (min. $5):</label>
+      <input type="number" name="userBet" min ="5" max="10">
+      <button type="submit" value="Submit bet" id="placeBet">Submit bet</button>
+    </form>
+    <p id="showUserBet">Your bet is: <span id="userBetValue"></span>$.</p>
+    <form id="getUserGuessForm">
+      <label for="userGuess">Choose a number from 1 to 10:</label>
+      <input type="number" name="userGuess" min ="1" max="10">
+      <button type="submit" value="Submit guess" id="submitGuess">Submit guess</button>
+    </form>
+    <span id="showRandomNo">The number is: <span id="randomNo"></span>.</span>
+    <span id="showUserGuess">Your guess is: <span id="userGuess"></span>.</span>
+    <p id="showRoundResult">Result: <span id="roundResult"></span>.</p>
+    <p id="playAgain">
+      Keep playing?
+      <button type="submit" value="Yes" id="keepPlaying">Yes</button>
+    </p>
+    <p id="bye">Bye bye!</p>
+  </div>
+</body>
+
+</html>
